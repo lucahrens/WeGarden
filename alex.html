@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<title>Alexandra's Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div style="color:white;background-color:#498781"class="w3-bar w3-top w3-large" style="z-index:4">
+  <span style="color:white" class="w3-bar-item w3-right">WeGarden</span>
+</div>
+
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-top:43px;width:100%">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> Alexandra's Dashboard</b></h5>
+  </header>
+
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-col" style="width:20%">
+      <div style="height:160px;color:white;background-color:#35645c"class="w3-container w3-padding-8">
+          <script type="text/javascript">
+          var getSoilMoist = (userName, key)=>{
+            // instantiate a headers object
+            var myHeaders = new Headers();
+            // add content type header to object
+            myHeaders.append("X-AIO-Key", key);
+            var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+            // make API call with parameters and use promises to get response
+            const response = "jk";
+            fetch("https://io.adafruit.com/api/v2/" + userName + "/feeds/soilmoist/data", requestOptions)
+            .then(response => response.json())
+        .then(data => {
+          //document.getElementById("soilMoist").innerHTML = data[0]["value"] + "/10"
+          document.getElementById("soilMoist").innerHTML = "2" + "/10"
+        })
+        .catch(err => console.log(err));
+            return response;
+        }
+          window.onload = getSoilMoist("asalzman", "aio_BjNr023vD38NSvgxzG6BSq45hszw"); 
+          </script>
+          <h3 id = "soilMoist">
+          </h3>
+        <div class="w3-clear"></div>
+        <h4>Soil Moisture</h4>
+      </div>
+    </div>
+    <div class="w3-col" style="width:20%">
+      <div style="height:160px; color:white;background-color:#3a847d"class="w3-container w3-padding-8">
+        <script type="text/javascript">
+          var getSoilTemp = (userName, key)=>{
+            // instantiate a headers object
+            var myHeaders = new Headers();
+            // add content type header to object
+            myHeaders.append("X-AIO-Key", key);
+            var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+            // make API call with parameters and use promises to get response
+            const response = "jk";
+            fetch("https://io.adafruit.com/api/v2/" + userName + "/feeds/soiltemp/data", requestOptions)
+            .then(response => response.json())
+        .then(data => {
+          //document.getElementById("soilTemp").innerHTML = data[0]["value"] + " °F"
+          document.getElementById("soilTemp").innerHTML = "45" + " °F"
+        })
+        .catch(err => console.log(err));
+            return response;
+        }
+          window.onload = getSoilTemp("asalzman", "aio_BjNr023vD38NSvgxzG6BSq45hszw"); 
+          </script>
+          <h3 id = "soilTemp"></h3>
+        <div class="w3-clear"></div>
+        <h4>Soil Temperature</h4>
+      </div>
+    </div>
+    <div class="w3-col" style="width:20%">
+      <div style="height:160px;color:white;background-color:#64a49c"class="w3-container  w3-padding-8">
+          <script type="text/javascript">
+          var getSunlightStrength = (userName, key)=>{
+            // instantiate a headers object
+            var myHeaders = new Headers();
+            // add content type header to object
+            myHeaders.append("X-AIO-Key", key);
+            var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+            // make API call with parameters and use promises to get response
+            const response = "jk";
+            fetch("https://io.adafruit.com/api/v2/" + userName + "/feeds/sunlightstrength/data", requestOptions)
+            .then(response => response.json())
+        .then(data => {
+          //document.getElementById("sunlightStrength").innerHTML = data[0]["value"] + "/10"
+          document.getElementById("sunlightStrength").innerHTML = "4" + "/10"
+        })
+        .catch(err => console.log(err));
+            return response;
+        }
+          window.onload = getSunlightStrength("asalzman", "aio_BjNr023vD38NSvgxzG6BSq45hszw"); 
+         </script>
+        
+        
+          <h3 style="color:white" id = "sunlightStrength"></h3>
+        <div class="w3-clear"></div>
+        <h4 style="color:white">Sunlight Strength</h4>
+      </div>
+    </div>
+    
+    <div class="w3-col" style="width:20%">
+      <div style="height:160px;color:white;background-color:#97b7b3"class="w3-container w3-text-white w3-padding-8">
+        <script type="text/javascript">
+          var getHumid = (userName, key)=>{
+            // instantiate a headers object
+            var myHeaders = new Headers();
+            // add content type header to object
+            myHeaders.append("X-AIO-Key", key);
+            var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+            // make API call with parameters and use promises to get response
+            const response = "jk";
+            fetch("https://io.adafruit.com/api/v2/" + userName + "/feeds/humid/data", requestOptions)
+            .then(response => response.json())
+        .then(data => {
+          //document.getElementById("humid").innerHTML = data[0]["value"] + "%"
+          document.getElementById("humid").innerHTML = "50" + "%"
+        })
+        .catch(err => console.log(err));
+            return response;
+        }
+          window.onload = getHumid("asalzman", "aio_BjNr023vD38NSvgxzG6BSq45hszw"); 
+          
+          
+          function name()
+{
+var input = document.getElementById("userInput");
+alert(input);
+}
+          
+          </script>
+          <h3 id = "humid"></h3>
+        <div class="w3-clear"></div>
+        <h4>Air Humidity</h4>
+      </div>
+     </div>
+    
+    
+    <div class="w3-col" style="width:20%">
+      <div style="height:160px;color:white;background-color:#b6d0ce"class="w3-container   w3-text-white w3-padding-8">
+        
+        <script type="text/javascript">
+          var getTemp = (userName, key)=>{
+            // instantiate a headers object
+            var num = 0;
+            var myHeaders = new Headers();
+            // add content type header to object
+            myHeaders.append("X-AIO-Key", key);
+            var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+            // make API call with parameters and use promises to get response
+            const response = "jk";
+            fetch("https://io.adafruit.com/api/v2/" + userName + "/feeds/temp/data", requestOptions)
+            .then(response => response.json())
+        .then(data => {
+          //document.getElementById("temp").innerHTML = data[0]["value"] + " °F"
+          document.getElementById("temp").innerHTML = "50" + " °F"
+        })
+            return  num
+          }
+          window.onload = getTemp("asalzman", "aio_BjNr023vD38NSvgxzG6BSq45hszw"); 
+          
+          //console.log(document.getElementById("temp"))
+          
+          </script>
+          
+        <h3 id = "temp"></h3>
+      <div class="w3-clear"></div>
+        <h4>Air Temperature</h4>
+      </div>
+     </div>
+  </div>
+
+  <h5 style="margin-left:18px;visibility:hidden" id = "wateralert">You need to water your plants!</h5>
+  
+	<script>
+    function needToWater(userName, key) {
+       var myHeaders = new Headers();
+            // add content type header to object
+            myHeaders.append("X-AIO-Key", key);
+            var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+            // make API call with parameters and use promises to get response
+            const response = "jk";
+            fetch("https://io.adafruit.com/api/v2/" + userName + "/feeds/soilmoist/data", requestOptions)
+            .then(response => response.json())
+        .then(data => {
+          //if(data[0]["value"] < 4) {
+            if(true) {
+          	document.getElementById("wateralert").style.visibility = "visible";
+          }
+        })
+        .catch(err => console.log(err));
+            return response;
+        }      
+      
+			
+    	//if (Number(document.getElementById("soilMoist").innerHTML.substring(0,2)),
+      needToWater("asalzman", "aio_BjNr023vD38NSvgxzG6BSq45hszw");
+    </script>
+
+  <h5 style="padding-bottom:10px; padding-left:18px"><b>Alexandra's Plants:</b></h5><br>
+  
+  <p style="margin-left:18px;margin-top:-40px;margin-bottom:10px" id = "userPlants"></p>
+  
+
+ <form style="padding-left:18px;"type="text">
+
+  <select style="height:30px; margin-left:0px"id="plants" name="plants">
+    <option value="Asparagus">Asparagus</option>
+    <option value="Lima beans">Lima beans</option>
+    <option value="Snap beans">Snap beans</option>
+    <option value="Cabbage">Cabbage</option>
+    <option value="Carrots">Carrots</option>
+    <option value="Cauliflower">Cauliflower</option>
+    <option value="Sweet corn">Sweet corn</option>
+    <option value="Cucumbers">Cucumbers</option>
+    <option value="Eggplant">Eggplant</option>
+    <option value="Lettuce">Lettuce</option>
+    <option value="Melon">Melon</option>
+    <option value="Okra">Okra</option>
+    <option value="Onions">Onions</option>
+    <option value="Parsley">Parsley</option>
+    <option value="Parsnips">Parsnips</option>
+    <option value="Peas">Peas</option>
+    <option value="Peppers">Peppers</option>
+    <option value="Radishes">Radishes</option>
+    <option value="Spinach">Spinach</option>
+    <option value="Tomatoes">Tomatoes</option>
+    <option value="Turnips">Turnips</option>
+    <option value="Watermelons">Watermelons</option>
+    </select>
+</form>
+  
+  <input   style="background-color:#b6d0ce; border-color:#b6d0ce;border-radius:5px;border:none;height:30px;margin-left:18px;margin-top:5px" type="submit" value = "Add plant" onclick="addPlant();chill()">
+   
+  <script>
+    function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+		async function chill() {
+    	await sleep(1000);  
+      getPlants()
+    }
+    var addPlant = () => {
+     	var plant = document.getElementById("plants").value
+      var username = "asalzman"
+    	var key = "aio_BjNr023vD38NSvgxzG6BSq45hszw"
+      var myHeaders = new Headers();
+
+       // add content type header to object
+       //console.log(getTemp(username, key))
+       const info = {
+              "value": plant
+            }
+            myHeaders.append("Host", "io.adafruit.com");
+            myHeaders.append("Content-Length",  JSON.stringify(info).size);
+            myHeaders.append("X-AIO-Key", key);
+      			myHeaders.append("Content-Type", "application/json");
+       			
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                redirect: 'follow',
+                body: JSON.stringify(info)
+            };
+            // make API call with parameters and use promises to get response
+            const response = "jk";
+            fetch("https://io.adafruit.com/api/v2/" + username + "/feeds/plants/data", requestOptions)
+            .then(response => response.json())
+        .then(data => {
+              console.log(data)
+        })
+        .catch(err => console.log(err));
+            return response;
+    }
+    
+    var getPlants = () => {
+    	  var username = "asalzman"
+    	var key = "aio_BjNr023vD38NSvgxzG6BSq45hszw"
+            var myHeaders = new Headers();
+            // add content type header to object
+            myHeaders.append("X-AIO-Key", key);
+            var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+            fetch("https://io.adafruit.com/api/v2/" + username + "/feeds/plants/data", requestOptions)
+            .then(response => response.json())
+        .then(data => {
+          txt = ""
+              txt += "<table border='0'>"
+              for(x in data) {
+                txt +=  "<tr><td>" + data[x]["value"] + "</td></tr>"; 
+                //console.log(x);
+              }
+              txt += "</table>"
+              document.getElementById("userPlants").innerHTML = txt;
+        })
+            console.log("ran")
+          }
+    getPlants()
+  </script>
+  
+ 
+  
+  <div style = "width:1020px;padding-left:18px" class = "rec">
+
+    <h5><b>Alexandra's Recommendations: </b></h5>
+   <!--- ADD ALGO FOR REC ABOVE--->
+      <script>
+     var alpha = (username, key) =>{
+        var input = document.getElementById("userInput").value;
+         var myHeaders = new Headers();
+
+            // add content type header to object
+       //console.log(getTemp(username, key))
+       const info = {
+              "growTime": Number(input),
+              "soilTemp": Number(document.getElementById("soilTemp").innerHTML.substring(0,2)),
+              "sunlightRate": Number(document.getElementById("sunlightStrength").innerHTML.substring(0,1))
+            }
+            myHeaders.append("Host", "352livvzza.execute-api.us-east-1.amazonaws.com");
+            myHeaders.append("Content-Length",  JSON.stringify(info).size);
+            
+       
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                redirect: 'follow',
+                body: JSON.stringify(info)
+            };
+            // make API call with parameters and use promises to get response
+            const response = "jk";
+            fetch("https://352livvzza.execute-api.us-east-1.amazonaws.com/dev", requestOptions)
+            .then(response => response.json())
+        .then(data => {
+              document.getElementById("message").innerHTML = Object.values(data)[1].message
+              txt = ""
+              txt += "<table border='0'>"
+              var allPlants = Object.values(data)[1].plants
+              for(x in allPlants) {
+                txt +=  "<tr><td>" + Object.values(data)[1].plants[x] + "</td></tr>"; 
+                //console.log(x);
+              }
+              txt += "</table>"
+              document.getElementById("demo").innerHTML = txt;
+        })
+        .catch(err => console.log(err));
+            return response;
+        }
+    
+        
+        function showWord(){
+       
+        document.getElementById("plants4u").style.visibility = "visible";
+        }
+        
+    </script>
+    
+    
+    
+     <label style="margin-top:-25px;padding-bottom:10px"for="fname">How many days would you like to plant?</label><br>
+    
+ <form id="form" onsubmit="return false;">
+<input   type="number" id="userInput" min=20 max=1600>
+<input   style="background-color:#b6d0ce; border-color:#b6d0ce;border-radius:5px;border:none;height:30px;margin-top:-15px;" type="submit"  onclick="alpha('asalzman', 'aio_BjNr023vD38NSvgxzG6BSq45hszw');showWord();">
+    </form>
+    
+    <div>
+      <h5 id="plants4u"style="margin-bottom:-15px;visibility:hidden"> <b>Plants for You:</b></h5>
+      <p style="font-style:italic;bottom-margin:-100px"id = "message"></p></div>
+      <p style="margin-top:-15px;margin-left:-2px;margin-bottom:-20px"id="demo"></p>   </div>
+  
+  
+<footer style="margin-left:18px;">
+  <br>
+  <h5><b> Do you want to see what your friends and family are planting? </b></h5>
+  <button style="margin-top:-9px;background-color:#b6d0ce; border-color:#b6d0ce;margin-bottom:42px;border-radius:5px;border:none;height:30px"onClick="window.location.href='https://we-garden-website.s3.amazonaws.com/social.html'">Yes!</button>
+</div>
+</body>
+</html>
+  
+ 
